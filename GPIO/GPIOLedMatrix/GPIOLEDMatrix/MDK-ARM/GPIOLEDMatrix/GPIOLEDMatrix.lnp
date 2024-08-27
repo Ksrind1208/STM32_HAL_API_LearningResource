@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"gpioledmatrix\startup_stm32f103xb.o"
+"gpioledmatrix\main.o"
+"gpioledmatrix\stm32f1xx_it.o"
+"gpioledmatrix\stm32f1xx_hal_msp.o"
+"gpioledmatrix\stm32f1xx_hal_gpio_ex.o"
+"gpioledmatrix\stm32f1xx_hal_tim.o"
+"gpioledmatrix\stm32f1xx_hal_tim_ex.o"
+"gpioledmatrix\stm32f1xx_hal.o"
+"gpioledmatrix\stm32f1xx_hal_rcc.o"
+"gpioledmatrix\stm32f1xx_hal_rcc_ex.o"
+"gpioledmatrix\stm32f1xx_hal_gpio.o"
+"gpioledmatrix\stm32f1xx_hal_dma.o"
+"gpioledmatrix\stm32f1xx_hal_cortex.o"
+"gpioledmatrix\stm32f1xx_hal_pwr.o"
+"gpioledmatrix\stm32f1xx_hal_flash.o"
+"gpioledmatrix\stm32f1xx_hal_flash_ex.o"
+"gpioledmatrix\stm32f1xx_hal_exti.o"
+"gpioledmatrix\system_stm32f1xx.o"
+--strict --scatter "GPIOLEDMatrix\GPIOLEDMatrix.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "GPIOLEDMatrix.map" -o GPIOLEDMatrix\GPIOLEDMatrix.axf

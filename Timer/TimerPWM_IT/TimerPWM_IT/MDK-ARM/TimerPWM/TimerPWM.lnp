@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"timerpwm\startup_stm32f103xb.o"
+"timerpwm\main.o"
+"timerpwm\stm32f1xx_it.o"
+"timerpwm\stm32f1xx_hal_msp.o"
+"timerpwm\stm32f1xx_hal_gpio_ex.o"
+"timerpwm\stm32f1xx_hal_tim.o"
+"timerpwm\stm32f1xx_hal_tim_ex.o"
+"timerpwm\stm32f1xx_hal.o"
+"timerpwm\stm32f1xx_hal_rcc.o"
+"timerpwm\stm32f1xx_hal_rcc_ex.o"
+"timerpwm\stm32f1xx_hal_gpio.o"
+"timerpwm\stm32f1xx_hal_dma.o"
+"timerpwm\stm32f1xx_hal_cortex.o"
+"timerpwm\stm32f1xx_hal_pwr.o"
+"timerpwm\stm32f1xx_hal_flash.o"
+"timerpwm\stm32f1xx_hal_flash_ex.o"
+"timerpwm\stm32f1xx_hal_exti.o"
+"timerpwm\system_stm32f1xx.o"
+--strict --scatter "TimerPWM\TimerPWM.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "TimerPWM.map" -o TimerPWM\TimerPWM.axf

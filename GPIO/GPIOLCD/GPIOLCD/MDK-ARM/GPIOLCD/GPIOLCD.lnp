@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"gpiolcd\startup_stm32f103xb.o"
+"gpiolcd\main.o"
+"gpiolcd\stm32f1xx_it.o"
+"gpiolcd\stm32f1xx_hal_msp.o"
+"gpiolcd\stm32f1xx_hal_gpio_ex.o"
+"gpiolcd\stm32f1xx_hal_tim.o"
+"gpiolcd\stm32f1xx_hal_tim_ex.o"
+"gpiolcd\stm32f1xx_hal.o"
+"gpiolcd\stm32f1xx_hal_rcc.o"
+"gpiolcd\stm32f1xx_hal_rcc_ex.o"
+"gpiolcd\stm32f1xx_hal_gpio.o"
+"gpiolcd\stm32f1xx_hal_dma.o"
+"gpiolcd\stm32f1xx_hal_cortex.o"
+"gpiolcd\stm32f1xx_hal_pwr.o"
+"gpiolcd\stm32f1xx_hal_flash.o"
+"gpiolcd\stm32f1xx_hal_flash_ex.o"
+"gpiolcd\stm32f1xx_hal_exti.o"
+"gpiolcd\system_stm32f1xx.o"
+--strict --scatter "GPIOLCD\GPIOLCD.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "GPIOLCD.map" -o GPIOLCD\GPIOLCD.axf

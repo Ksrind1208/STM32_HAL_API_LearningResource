@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"gpio74hc595\startup_stm32f103xb.o"
+"gpio74hc595\main.o"
+"gpio74hc595\stm32f1xx_it.o"
+"gpio74hc595\stm32f1xx_hal_msp.o"
+"gpio74hc595\stm32f1xx_hal_gpio_ex.o"
+"gpio74hc595\stm32f1xx_hal_tim.o"
+"gpio74hc595\stm32f1xx_hal_tim_ex.o"
+"gpio74hc595\stm32f1xx_hal.o"
+"gpio74hc595\stm32f1xx_hal_rcc.o"
+"gpio74hc595\stm32f1xx_hal_rcc_ex.o"
+"gpio74hc595\stm32f1xx_hal_gpio.o"
+"gpio74hc595\stm32f1xx_hal_dma.o"
+"gpio74hc595\stm32f1xx_hal_cortex.o"
+"gpio74hc595\stm32f1xx_hal_pwr.o"
+"gpio74hc595\stm32f1xx_hal_flash.o"
+"gpio74hc595\stm32f1xx_hal_flash_ex.o"
+"gpio74hc595\stm32f1xx_hal_exti.o"
+"gpio74hc595\system_stm32f1xx.o"
+--strict --scatter "GPIO74HC595\GPIO74HC595.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "GPIO74HC595.map" -o GPIO74HC595\GPIO74HC595.axf

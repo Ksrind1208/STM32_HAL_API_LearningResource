@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"gpioinput\startup_stm32f103xb.o"
+"gpioinput\main.o"
+"gpioinput\stm32f1xx_it.o"
+"gpioinput\stm32f1xx_hal_msp.o"
+"gpioinput\stm32f1xx_hal_gpio_ex.o"
+"gpioinput\stm32f1xx_hal_tim.o"
+"gpioinput\stm32f1xx_hal_tim_ex.o"
+"gpioinput\stm32f1xx_hal.o"
+"gpioinput\stm32f1xx_hal_rcc.o"
+"gpioinput\stm32f1xx_hal_rcc_ex.o"
+"gpioinput\stm32f1xx_hal_gpio.o"
+"gpioinput\stm32f1xx_hal_dma.o"
+"gpioinput\stm32f1xx_hal_cortex.o"
+"gpioinput\stm32f1xx_hal_pwr.o"
+"gpioinput\stm32f1xx_hal_flash.o"
+"gpioinput\stm32f1xx_hal_flash_ex.o"
+"gpioinput\stm32f1xx_hal_exti.o"
+"gpioinput\system_stm32f1xx.o"
+--strict --scatter "GPIOInput\GPIOInput.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "GPIOInput.map" -o GPIOInput\GPIOInput.axf

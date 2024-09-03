@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"timerdht11\startup_stm32f103xb.o"
+"timerdht11\main.o"
+"timerdht11\stm32f1xx_it.o"
+"timerdht11\stm32f1xx_hal_msp.o"
+"timerdht11\stm32f1xx_hal_gpio_ex.o"
+"timerdht11\stm32f1xx_hal_tim.o"
+"timerdht11\stm32f1xx_hal_tim_ex.o"
+"timerdht11\stm32f1xx_hal.o"
+"timerdht11\stm32f1xx_hal_rcc.o"
+"timerdht11\stm32f1xx_hal_rcc_ex.o"
+"timerdht11\stm32f1xx_hal_gpio.o"
+"timerdht11\stm32f1xx_hal_dma.o"
+"timerdht11\stm32f1xx_hal_cortex.o"
+"timerdht11\stm32f1xx_hal_pwr.o"
+"timerdht11\stm32f1xx_hal_flash.o"
+"timerdht11\stm32f1xx_hal_flash_ex.o"
+"timerdht11\stm32f1xx_hal_exti.o"
+"timerdht11\system_stm32f1xx.o"
+--strict --scatter "TimerDHT11\TimerDHT11.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "TimerDHT11.map" -o TimerDHT11\TimerDHT11.axf

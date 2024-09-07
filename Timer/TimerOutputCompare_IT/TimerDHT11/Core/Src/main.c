@@ -62,7 +62,8 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
     {
 
         // Thi?t l?p l?i giá tr? Pulse d? toggle sau 2 giây n?a
-        __HAL_TIM_SET_COMPARE(htim, TIM_CHANNEL_1, htim->Instance->CNT + 1000);
+        /*__HAL_TIM_SET_COMPARE(htim, TIM_CHANNEL_1, htim->Instance->CNT + 1000);*/
+
     }
 }
 /* USER CODE END 0 */
@@ -109,7 +110,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
+					
   }
   /* USER CODE END 3 */
 }
@@ -202,7 +203,6 @@ static void MX_TIM4_Init(void)
   {
     Error_Handler();
   }
-  __HAL_TIM_ENABLE_OCxPRELOAD(&htim4, TIM_CHANNEL_1);
   /* USER CODE BEGIN TIM4_Init 2 */
 
   /* USER CODE END TIM4_Init 2 */

@@ -30,6 +30,7 @@ uint8_t u8_SPI2_RxBuff[sizeofBuff];
 uint8_t u8_SPI2_RxSend[sizeofBuff]="from master";
 uint8_t u8_SPI2_RxSend1[sizeofBuff]="Da nhan duoc";
 uint8_t count=0;
+uint8_t bufferDR;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,6 +51,8 @@ uint8_t count=0;
 /* Private variables ---------------------------------------------------------*/
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
+DMA_HandleTypeDef hdma_spi2_rx;
+DMA_HandleTypeDef hdma_spi2_tx;
 
 /* USER CODE BEGIN PV */
 
@@ -58,6 +61,7 @@ SPI_HandleTypeDef hspi2;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_SPI2_Init(void);
 /* USER CODE BEGIN PFP */
@@ -107,20 +111,24 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
-
+	
 	GPIOA->BSRR = 1 << 20;
-	
-	HAL_SPI_Transmit_IT(&hspi1,u8_SPI1_TxBuff,sizeofBuff);
-	HAL_SPI_Receive(&hspi2,u8_SPI2_RxBuff,sizeofBuff,100);
-	
-	
-	//HAL_SPI_Transmit_IT(&hspi2,u8_SPI2_RxSend,sizeofBuff);
-	//HAL_SPI_Receive(&hspi1,u8_SPI1_TxReceive,sizeofBuff,100);
+
+	HAL_SPI_Receive_DMA(&hspi2, u8_SPI2_RxBuff, sizeofBuff);
+	HAL_SPI_Transmit(&hspi1, u8_SPI1_TxBuff, sizeofBuff, 100);
+
+	GPIOA->BSRR = 1 << 4;
+	HAL_Delay(1000);
 
 	
+	GPIOA->BSRR=1<<20;
+	HAL_SPI_Transmit_IT(&hspi2,u8_SPI2_RxSend,sizeofBuff);
+	HAL_SPI_Receive(&hspi1,u8_SPI1_TxReceive,sizeofBuff,100);
+
 	
   /* USER CODE END 2 */
 
@@ -251,6 +259,25 @@ static void MX_SPI2_Init(void)
   /* USER CODE BEGIN SPI2_Init 2 */
 
   /* USER CODE END SPI2_Init 2 */
+
+}
+
+/**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Channel4_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
+  /* DMA1_Channel5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
 
 }
 

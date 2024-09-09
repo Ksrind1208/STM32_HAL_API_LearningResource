@@ -27,9 +27,9 @@ uint8_t u8_SPI1_TxBuff[sizeofBuff]="Master send";
 uint8_t u8_SPI1_TxBuff1[sizeofBuff]="Hello world";
 uint8_t u8_SPI1_TxReceive[sizeofBuff];
 uint8_t u8_SPI2_RxBuff[sizeofBuff];
-uint8_t u8_SPI2_RxSend[sizeofBuff]="Da nhan duoc";
+uint8_t u8_SPI2_RxSend[sizeofBuff]="from master";
 uint8_t u8_SPI2_RxSend1[sizeofBuff]="Da nhan duoc";
-uint8_t count;
+uint8_t count=0;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -67,14 +67,14 @@ static void MX_SPI2_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
-    if(hspi->Instance == SPI2){
-        HAL_SPI_Receive_IT(&hspi2, u8_SPI2_RxBuff, sizeofBuff); // Ti?p t?c nh?n d? li?u trên SPI2
-    }
+	if(hspi->Instance == SPI2){
+		HAL_SPI_Receive_IT(&hspi2,u8_SPI2_RxBuff,sizeofBuff);
+	}
 }
-void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi){
-    if(hspi->Instance == SPI1){
-        HAL_SPI_TransmitReceive_IT(&hspi1,u8_SPI1_TxBuff,u8_SPI1_TxReceive,sizeofBuff); // Ti?p t?c nh?n d? li?u trên SPI2
-    }
+void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi){
+	if(hspi->Instance == SPI2){
+		HAL_SPI_Transmit_IT(&hspi1,u8_SPI1_TxBuff,sizeofBuff);
+	}
 }
 /* USER CODE END 0 */
 
@@ -109,22 +109,38 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
-	/* USER CODE BEGIN 2 */
-	HAL_SPI_Receive_IT(&hspi2,u8_SPI2_RxBuff,sizeofBuff);
-	HAL_SPI_TransmitReceive_IT(&hspi1,u8_SPI1_TxBuff,u8_SPI1_TxReceive,sizeofBuff);
-	/* USER CODE END 2 */
+  /* USER CODE BEGIN 2 */
 
-	while (1){
-    GPIOA->BSRR = 1 << 20;  // Duy trì tr?ng thái c?a GPIO
-		HAL_SPI_TransmitReceive(&hspi2,u8_SPI2_RxBuff,u8_SPI2_RxSend,sizeofBuff,100);
-		HAL_SPI_TransmitReceive(&hspi1,u8_SPI1_TxBuff,u8_SPI1_TxReceive,sizeofBuff,100);
+	GPIOA->BSRR = 1 << 20;
+	
+	HAL_SPI_Transmit_IT(&hspi1,u8_SPI1_TxBuff,sizeofBuff);
+	HAL_SPI_Receive(&hspi2,u8_SPI2_RxBuff,sizeofBuff,100);
+	
+	
+	//HAL_SPI_Transmit_IT(&hspi2,u8_SPI2_RxSend,sizeofBuff);
+	//HAL_SPI_Receive(&hspi1,u8_SPI1_TxReceive,sizeofBuff,100);
+
+	
+	
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
 		
-    HAL_Delay(1000);
-		HAL_SPI_TransmitReceive(&hspi2,u8_SPI2_RxBuff,u8_SPI2_RxSend,sizeofBuff,100);
-		HAL_SPI_TransmitReceive(&hspi1,u8_SPI1_TxBuff1,u8_SPI1_TxReceive,sizeofBuff,100);
+			/*HAL_SPI_Transmit_IT(&hspi2,u8_SPI2_RxSend,sizeofBuff);
+	HAL_SPI_Receive(&hspi1,u8_SPI1_TxReceive,sizeofBuff,100);
+		HAL_Delay(1000);
 		
-    HAL_Delay(1000);
-	}
+			HAL_SPI_Transmit_IT(&hspi2,u8_SPI2_RxSend1,sizeofBuff);
+	HAL_SPI_Receive(&hspi1,u8_SPI1_TxReceive,sizeofBuff,100);
+		HAL_Delay(1000);*/
+  }
+  /* USER CODE END 3 */
 }
 
 /**

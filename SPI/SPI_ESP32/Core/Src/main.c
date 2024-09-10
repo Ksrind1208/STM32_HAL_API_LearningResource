@@ -61,16 +61,23 @@ static void MX_SPI1_Init(void);
 /* USER CODE BEGIN 0 */
 uint8_t rxBuffer[1]={0};
 uint8_t rxBuffer_Slave[30];
-uint8_t txBuffer_Slave[30]="Hello from slave";
+uint8_t txBuffer_Slave[12]="from slave";
+uint8_t txBuffer[1]={0};
 uint8_t index=0;
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi){
 	if(hspi->Instance==SPI1){
+
 		HAL_SPI_Receive_IT(&hspi1,rxBuffer,1);	
-		rxBuffer_Slave[index]=rxBuffer[0];
-		if(rxBuffer[0]=='\n'){
+
+		if(rxBuffer[0]=='q'){
 			index=0;
 		}else{
-			index++;
+			rxBuffer_Slave[index]=rxBuffer[0];
+			if(index>30 || index==30 ){
+				index=0;
+			}else{
+				index++;
+			}
 		}
 	}
 }

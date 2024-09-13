@@ -3,7 +3,7 @@
 <title>Static Call Graph - [SPI_ESP32\SPI_ESP32.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image SPI_ESP32\SPI_ESP32.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Tue Sep 10 11:35:28 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Fri Sep 13 22:34:37 2024
 <BR><P>
 <H3>Maximum Stack Usage =        172 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -97,8 +97,8 @@ Function Pointers
 Global Symbols
 </H3>
 <P><STRONG><a name="[36]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
-<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(.text)
 </UL>
@@ -191,8 +191,8 @@ Global Symbols
 <P><STRONG><a name="[8b]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[3f]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
 <P><STRONG><a name="[8c]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
@@ -365,21 +365,11 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[6a]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
+<P><STRONG><a name="[90]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[90]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[91]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[91]"></a>__rt_memclr_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
-
-<P><STRONG><a name="[92]"></a>_memset_w</STRONG> (Thumb, 74 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
-
-<P><STRONG><a name="[93]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
-
-<P><STRONG><a name="[94]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
-
-<P><STRONG><a name="[95]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[92]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
 <P><STRONG><a name="[43]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -400,23 +390,23 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[96]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[93]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[4d]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[97]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[94]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[4c]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
-<P><STRONG><a name="[98]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[95]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[99]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[96]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[9a]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
+<P><STRONG><a name="[97]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_it.o(.text.BusFault_Handler))
 <BR><BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BusFault_Handler
@@ -472,14 +462,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[58]"></a>HAL_GetTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f1xx_hal.o(.text.HAL_GetTick))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
+<BR><BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
 </UL>
 
-<P><STRONG><a name="[69]"></a>HAL_IncTick</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f1xx_hal.o(.text.HAL_IncTick))
+<P><STRONG><a name="[6a]"></a>HAL_IncTick</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f1xx_hal.o(.text.HAL_IncTick))
 <BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
@@ -545,8 +536,8 @@ Global Symbols
 
 <P><STRONG><a name="[5c]"></a>HAL_SPI_ErrorCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(.text.HAL_SPI_ErrorCallback))
 <BR><BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAAbortOnError
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_IRQHandler
 </UL>
 
@@ -579,24 +570,34 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
 </UL>
 
-<P><STRONG><a name="[64]"></a>HAL_SPI_Receive_IT</STRONG> (Thumb, 324 bytes, Stack size 16 bytes, stm32f1xx_hal_spi.o(.text.HAL_SPI_Receive_IT))
+<P><STRONG><a name="[65]"></a>HAL_SPI_Receive_IT</STRONG> (Thumb, 324 bytes, Stack size 16 bytes, stm32f1xx_hal_spi.o(.text.HAL_SPI_Receive_IT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_SPI_Receive_IT
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_RxCpltCallback
 </UL>
 
-<P><STRONG><a name="[63]"></a>HAL_SPI_RxCpltCallback</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, main.o(.text.HAL_SPI_RxCpltCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Receive_IT
+<P><STRONG><a name="[63]"></a>HAL_SPI_RxCpltCallback</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, main.o(.text.HAL_SPI_RxCpltCallback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_IT
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_IT
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
+<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
 </UL>
 
-<P><STRONG><a name="[67]"></a>HAL_SPI_TxRxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(.text.HAL_SPI_TxRxCpltCallback))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
+<P><STRONG><a name="[64]"></a>HAL_SPI_Transmit</STRONG> (Thumb, 506 bytes, Stack size 32 bytes, stm32f1xx_hal_spi.o(.text.HAL_SPI_Transmit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
+</UL>
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_RxCpltCallback
+</UL>
+
+<P><STRONG><a name="[68]"></a>HAL_SPI_TxRxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(.text.HAL_SPI_TxRxCpltCallback))
+<BR><BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
 </UL>
 
 <P><STRONG><a name="[55]"></a>HAL_SYSTICK_Config</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, stm32f1xx_hal_cortex.o(.text.HAL_SYSTICK_Config))
@@ -638,7 +639,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(RESET)
 </UL>
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f1xx_it.o(.text.SysTick_Handler))
-<BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
+<BR><BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(RESET)
 </UL>
@@ -652,18 +653,16 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(RESET)
 </UL>
-<P><STRONG><a name="[47]"></a>main</STRONG> (Thumb, 238 bytes, Stack size 64 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 172 + Unknown Stack Size
-<LI>Call Chain = main &rArr; HAL_SPI_Init &rArr; HAL_SPI_MspInit &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[47]"></a>main</STRONG> (Thumb, 274 bytes, Stack size 64 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 172<LI>Call Chain = main &rArr; HAL_SPI_Init &rArr; HAL_SPI_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_IT
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_IT
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
@@ -676,54 +675,55 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
+<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
 </UL>
 
 <P><STRONG><a name="[38]"></a>SPI_2linesRxISR_8BIT</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(.text.SPI_2linesRxISR_8BIT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = SPI_2linesRxISR_8BIT &rArr; SPI_CloseRxTx_ISR &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_2linesRxISR_8BIT &rArr; SPI_CloseRxTx_ISR &rArr; HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f1xx_hal_spi.o(.text.HAL_SPI_Receive_IT)
 </UL>
 <P><STRONG><a name="[39]"></a>SPI_2linesRxISR_16BIT</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(.text.SPI_2linesRxISR_16BIT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = SPI_2linesRxISR_16BIT &rArr; SPI_CloseRxTx_ISR &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_2linesRxISR_16BIT &rArr; SPI_CloseRxTx_ISR &rArr; HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f1xx_hal_spi.o(.text.HAL_SPI_Receive_IT)
 </UL>
 <P><STRONG><a name="[3a]"></a>SPI_2linesTxISR_16BIT</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(.text.SPI_2linesTxISR_16BIT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = SPI_2linesTxISR_16BIT &rArr; SPI_CloseRxTx_ISR &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_2linesTxISR_16BIT &rArr; SPI_CloseRxTx_ISR &rArr; HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f1xx_hal_spi.o(.text.HAL_SPI_Receive_IT)
 </UL>
 <P><STRONG><a name="[3b]"></a>SPI_2linesTxISR_8BIT</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(.text.SPI_2linesTxISR_8BIT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = SPI_2linesTxISR_8BIT &rArr; SPI_CloseRxTx_ISR &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_2linesTxISR_8BIT &rArr; SPI_CloseRxTx_ISR &rArr; HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRxTx_ISR
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f1xx_hal_spi.o(.text.HAL_SPI_Receive_IT)
 </UL>
 <P><STRONG><a name="[3c]"></a>SPI_RxISR_16BIT</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(.text.SPI_RxISR_16BIT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SPI_RxISR_16BIT &rArr; SPI_CloseRx_ISR &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = SPI_RxISR_16BIT &rArr; SPI_CloseRx_ISR &rArr; HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f1xx_hal_spi.o(.text.HAL_SPI_Receive_IT)
 </UL>
 <P><STRONG><a name="[3d]"></a>SPI_RxISR_8BIT</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, stm32f1xx_hal_spi.o(.text.SPI_RxISR_8BIT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SPI_RxISR_8BIT &rArr; SPI_CloseRx_ISR &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = SPI_RxISR_8BIT &rArr; SPI_CloseRx_ISR &rArr; HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
+<BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseRx_ISR
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f1xx_hal_spi.o(.text.HAL_SPI_Receive_IT)
 </UL>
-<P><STRONG><a name="[68]"></a>SPI_CloseRx_ISR</STRONG> (Thumb, 156 bytes, Stack size 16 bytes, stm32f1xx_hal_spi.o(.text.SPI_CloseRx_ISR))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SPI_CloseRx_ISR &rArr; SPI_WaitFlagStateUntilTimeout
+<P><STRONG><a name="[69]"></a>SPI_CloseRx_ISR</STRONG> (Thumb, 156 bytes, Stack size 16 bytes, stm32f1xx_hal_spi.o(.text.SPI_CloseRx_ISR))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = SPI_CloseRx_ISR &rArr; HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_ErrorCallback
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
@@ -734,10 +734,10 @@ Local Symbols
 <LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxISR_16BIT
 </UL>
 
-<P><STRONG><a name="[65]"></a>SPI_CloseRxTx_ISR</STRONG> (Thumb, 262 bytes, Stack size 32 bytes, stm32f1xx_hal_spi.o(.text.SPI_CloseRxTx_ISR))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = SPI_CloseRxTx_ISR &rArr; SPI_WaitFlagStateUntilTimeout
+<P><STRONG><a name="[67]"></a>SPI_CloseRxTx_ISR</STRONG> (Thumb, 262 bytes, Stack size 32 bytes, stm32f1xx_hal_spi.o(.text.SPI_CloseRxTx_ISR))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = SPI_CloseRxTx_ISR &rArr; HAL_SPI_RxCpltCallback &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TxRxCpltCallback
+<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TxRxCpltCallback
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_ErrorCallback
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
